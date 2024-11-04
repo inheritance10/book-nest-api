@@ -8,11 +8,12 @@ import { AuthService } from './modules/auth/service/auth.service';
 import { AuthController } from './modules/auth/controller/auth.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from './config';
+import { SwaggerController } from './swagger.controller';
 
 @Module({
   imports: [
     ConfigModule, UserModule, BookModule, PrismaModule, AuthModule],
-  controllers: [AppController, AuthController],
+  controllers: [AppController, AuthController, SwaggerController],
   providers: [AppService, AuthService],
 })
 export class AppModule {
