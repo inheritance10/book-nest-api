@@ -5,6 +5,11 @@
 [Repo](https://github.com/inheritance10/book-nest-api) 
 github
 
+## Proje Klasör Yapısı
+```
+![Project Folder Structure](assets/img_1.png)
+```
+
 ## Gereksinimler
 Node js,
 Postgresql,
@@ -76,6 +81,8 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+
 
 
 
