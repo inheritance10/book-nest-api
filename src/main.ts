@@ -25,7 +25,7 @@ async function bootstrap() {
 
   // Statik dosyaları sunma
   app.useStaticAssets(path.join(__dirname, '..', 'public'), {
-    prefix: '/public/', // İsteğe bağlı: 'public' dizinini 'public/' ile sunmak
+    prefix: '/api/', // İsteğe bağlı: 'api' dizinini 'api/' ile sunmak
   });
 
 
