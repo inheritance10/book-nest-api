@@ -35,6 +35,17 @@ Swagger, API dokümantasyonunu otomatik olarak oluşturmak ve test etmek için k
 
 Bu iki tablo arasında bir "birden çoğa" (one-to-many) ilişkisi bulunuyor. Yani bir User birden fazla Book ile ilişkilendirilebilir, ancak her Book sadece bir User ile ilişkilidir.
 
+İlişki Açıklaması
+Birden Çoğa İlişki:
+User tablosundaki her bir kayıt, Book tablosunda birden fazla kitap kaydıyla ilişkili olabilir.
+Book tablosundaki her kayıt, User tablosunda yalnızca bir kullanıcıya (userId yabancı anahtar (FK) alanı ile) bağlıdır.
+
+## Prisma Kod Açıklaması
+User tablosunda, books alanı Book[] türünde tanımlanmış, yani bir kullanıcı birden fazla kitap ile ilişkilendirilebilir.
+Book tablosunda userId alanı, User tablosunun id alanına referans olarak tanımlanmıştır. Bu, her kitabın bir kullanıcıya ait olduğunu belirtir.
+@relation(fields: [userId], references: [id]) ifadesi, userId alanını User tablosundaki id alanına bağlayarak iki tablo arasındaki ilişkiyi tanımlar.
+Bu ilişki, veri tabanında her Book kaydının yalnızca bir User kaydına ait olmasını sağlar ve User kaydının birden fazla Book kaydıyla ilişkili olmasına izin verir.
+
 
 
 ## Gereksinimler
