@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 import { UpdateBookDto } from '../dto/update-book.dto';
 import { CreateBookDto } from '../dto/create-book.dto';
@@ -8,10 +8,12 @@ import { CurrentUser } from '../../../common/decorators/current-user.decorator';
 import { PaginationDto } from '../dto/pagination.dto';
 import { BookFilterDto } from '../dto/book-filter.dto';
 import { BookOrderDto } from '../dto/book-order.dto';
+import { LoggingInterceptor } from '../../../common/interceptors/logging.interceptor';
 
 @Controller('book')
 @UseGuards(AuthGuard)
 @ApiBearerAuth()
+@UseInterceptors(LoggingInterceptor)
 export class BookController {
   constructor(private readonly bookService: BookService) {}
 
