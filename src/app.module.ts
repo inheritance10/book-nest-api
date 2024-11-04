@@ -8,9 +8,16 @@ import { AuthService } from './modules/auth/service/auth.service';
 import { AuthController } from './modules/auth/controller/auth.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from './config';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
-  imports: [ConfigModule, UserModule, BookModule, PrismaModule, AuthModule],
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'swagger-static'),
+      serveRoot: process.env.NODE_ENV === 'development' ? '/' : '/swagger',
+    }),
+    ConfigModule, UserModule, BookModule, PrismaModule, AuthModule],
   controllers: [AppController, AuthController],
   providers: [AppService, AuthService],
 })
