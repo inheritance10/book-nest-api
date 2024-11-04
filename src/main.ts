@@ -21,13 +21,10 @@ async function bootstrap() {
     swaggerOptions: {
       persistAuthorization: true,
     },
-  });
 
-  // Statik dosyaları sunma
-  app.useStaticAssets(path.join(__dirname, '..', 'public'), {
-    prefix: '/api/', // İsteğe bağlı: 'api' dizinini 'api/' ile sunmak
-  });
 
+
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }
