@@ -8,8 +8,6 @@ import { AuthService } from './modules/auth/service/auth.service';
 import { AuthController } from './modules/auth/controller/auth.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule } from './config';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 
 @Module({
   imports: [

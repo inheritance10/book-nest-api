@@ -12,10 +12,6 @@
       "dest": "/api"
     },
     {
-      "src": "/swagger-static/(.*)",
-      "dest": "/swagger-static/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "src/main.ts",
       "methods": [
