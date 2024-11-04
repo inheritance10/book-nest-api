@@ -1,10 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 import { UpdateBookDto } from '../dto/update-book.dto';
 import { CreateBookDto } from '../dto/create-book.dto';
 import { BookService } from '../service/book.service';
 import { AuthGuard } from '../../../common/guards/auth.guard';
 import { CurrentUser } from '../../../common/decorators/current-user.decorator';
+import { PaginationDto } from '../dto/pagination.dto';
+import { BookFilterDto } from '../dto/book-filter.dto';
+import { BookOrderDto } from '../dto/book-order.dto';
 
 @Controller('book')
 @UseGuards(AuthGuard)
@@ -18,10 +21,14 @@ export class BookController {
     return this.bookService.create(createBookDto, user.id);
   }
 
-  @ApiOperation({ summary: 'Tüm kitapları listele' })
+  @ApiOperation({ summary: 'Tüm kitapları filtreleme, sıralama ve sayfalama ile listele' })
   @Get()
-  async findMany() {
-    return this.bookService.findMany();
+  async findMany(
+    @Query() paginationDto: PaginationDto,
+    @Query() filterDto: BookFilterDto,
+    @Query() orderDto: BookOrderDto,
+  ) {
+    return this.bookService.findMany(paginationDto, filterDto, orderDto);
   }
 
   @ApiOperation({ summary: 'Kitap detaylarını görüntüle' })

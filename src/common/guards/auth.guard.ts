@@ -9,9 +9,7 @@ import { Request } from 'express';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(
-    private jwtService: JwtService,
-  ) {}
+  constructor(private jwtService: JwtService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     let request: Request;
@@ -22,20 +20,23 @@ export class AuthGuard implements CanActivate {
     }
 
     const token = this.extractTokenFromHeader(request);
-    try {
 
-      if (!token) {
-        throw new UnauthorizedException();
-      }
+    if (!token) {
+      throw new UnauthorizedException('No token provided');
+    }
+
+    try {
+      const payload = this.jwtService.verify(token);
 
       if (context.getType() === 'ws') {
-        // put identity in client
         const client = context.switchToWs().getClient();
-        (client as any).identity = request['identity'];
+        (client as any).identity = payload;
+      } else {
+        request['identity'] = payload;
       }
 
       return true;
-    } catch {
+    } catch (error) {
       throw new UnauthorizedException('Invalid token');
     }
   }
