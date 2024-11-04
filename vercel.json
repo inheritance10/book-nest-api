@@ -12,6 +12,10 @@
       "dest": "/api"
     },
     {
+      "src": "/swagger-ui/(.*)",
+      "dest": "/public/swagger-ui/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "src/main.ts",
       "methods": [
