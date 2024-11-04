@@ -31,6 +31,7 @@ Swagger, API dokümantasyonunu otomatik olarak oluşturmak ve test etmek için k
 
 ## Tablo Diagramı
 
+![image](https://github.com/user-attachments/assets/a368cb79-a0e4-438e-a7d8-b0ce0fc00d73)
 
 
 ## Gereksinimler
