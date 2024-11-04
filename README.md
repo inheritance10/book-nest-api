@@ -33,6 +33,9 @@ Swagger, API dokümantasyonunu otomatik olarak oluşturmak ve test etmek için k
 
 ![image](https://github.com/user-attachments/assets/a368cb79-a0e4-438e-a7d8-b0ce0fc00d73)
 
+Bu iki tablo arasında bir "birden çoğa" (one-to-many) ilişkisi bulunuyor. Yani bir User birden fazla Book ile ilişkilendirilebilir, ancak her Book sadece bir User ile ilişkilidir.
+
+
 
 ## Gereksinimler
 Node js,
