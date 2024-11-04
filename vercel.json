@@ -12,8 +12,8 @@
       "dest": "/api"
     },
     {
-      "src": "/swagger-ui/(.*)",
-      "dest": "/public/swagger-ui/$1"
+      "src": "/swagger-static/(.*)",
+      "dest": "/swagger-static/$1"
     },
     {
       "src": "/(.*)",
