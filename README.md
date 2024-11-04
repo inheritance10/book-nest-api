@@ -5,10 +5,33 @@
 [Repo](https://github.com/inheritance10/book-nest-api) 
 github
 
-## Proje Klasör Yapısı
-```
-![Project Folder Structure](assets/img_1.png)
-```
+## Kullanılan Teknolojiler
+- Node js
+- Nest js
+- Prisma
+- Postgresql
+- JWT
+- Swagger
+
+## Neden Nest js?
+NestJS, Node.js üzerinde çalışan ve TypeScript ile geliştirilmiş bir back-end framework'üdür. Modüler yapısı, Dependency Injection (bağımlılık enjeksiyonu) desteği ve MVC (Model-View-Controller) yapısı ile organize ve ölçeklenebilir projeler oluşturmayı kolaylaştırır.
+
+
+## Neden Prisma?
+Prisma, veritabanı yönetimi için modern bir ORM (Object-Relational Mapping) aracıdır. Veritabanı yapısını kodda modelleyerek veritabanı sorgularını daha okunabilir ve TypeScript desteği ile güvenli hale getirir. Otomatik veri modellemesi ve migrasyon desteği sunar.
+
+## Neden Postgresql?
+PostgreSQL, güçlü ve açık kaynaklı bir ilişkisel veritabanı yönetim sistemidir. ACID uyumlu yapısı ve zengin veri tipleri ile yüksek performanslı ve güvenilir bir veritabanı çözümüdür.
+
+## JWT (JSON Web Token)
+JWT, kullanıcı kimlik doğrulama süreçlerinde yaygın olarak kullanılan bir JSON formatında token yapısıdır. Kullanıcı oturumlarını güvenli ve taşınabilir bir şekilde yönetmek için kullanılır. JWT, kullanıcıya verilen yetkilerin doğrulanmasını sağlar ve yeniden oturum açmayı gerektirmeden doğrulama yapılmasını mümkün kılar.
+
+## Swagger
+Swagger, API dokümantasyonunu otomatik olarak oluşturmak ve test etmek için kullanılan bir araçtır. NestJS ile entegre edilebilir ve proje geliştirilirken API'lerin nasıl çalıştığını anlamayı kolaylaştırır. Swagger, özellikle Rest API'lerin nasıl kullanılacağı konusunda geliştiricilere rehberlik eder.
+
+## Tablo Diagramı
+
+
 
 ## Gereksinimler
 Node js,
