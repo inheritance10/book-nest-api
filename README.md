@@ -46,9 +46,23 @@ Book tablosunda userId alanı, User tablosunun id alanına referans olarak tanı
 @relation(fields: [userId], references: [id]) ifadesi, userId alanını User tablosundaki id alanına bağlayarak iki tablo arasındaki ilişkiyi tanımlar.
 Bu ilişki, veri tabanında her Book kaydının yalnızca bir User kaydına ait olmasını sağlar ve User kaydının birden fazla Book kaydıyla ilişkili olmasına izin verir.
 
+## Akış Diyagramı
+
 ![image](https://github.com/user-attachments/assets/172eb40c-c6d6-493b-9e48-dbaa0b40b08e)
 
-
+## Diyagram Detayları
+Frontend Kullanıcı Girişi:
+Kullanıcı adı ve şifre bilgileri, giriş yapmak için frontend arayüzünden backend’e gönderilir.
+Backend Kimlik Doğrulama:
+Backend, gelen bilgileri doğrular.
+Bilgiler doğruysa, JWT oluşturur ve frontend’e gönderir.
+JWT ile Yetkilendirilmiş İstek:
+Frontend, JWT'yi alır ve daha sonraki yetkilendirilmiş isteklerde (örneğin, kitap listesi alma gibi) bu token'ı backend’e gönderir.
+Backend JWT Doğrulama ve Veritabanı İşlemleri:
+Backend, gelen JWT token'ı doğrular.
+Token geçerliyse, istenilen veritabanı işlemi gerçekleştirilir (örneğin, Prisma kullanarak Book tablosundan veri çekilir).
+Yanıt Gönderimi:
+Backend, veritabanından aldığı yanıtı frontend’e döner ve frontend bu yanıtı kullanıcıya gösterir.
 
 
 ## Gereksinimler
